@@ -7,7 +7,7 @@ using System.Text;
 
 namespace achieve_lib.AD
 {
-	class User
+	public class User
 	{
 		[BsonId]
 		[BsonRepresentation(BsonType.ObjectId)]
@@ -33,5 +33,9 @@ namespace achieve_lib.AD
 		[BsonElement("interests")]
 		[JsonProperty("interests")]
 		public List<string> Interests { get; set; }
+
+		[BsonElement("activities")]
+		[JsonProperty("activities")]
+		public List<string> Activities { get; set; }
 	}
 }
