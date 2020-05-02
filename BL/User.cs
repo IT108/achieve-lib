@@ -1,11 +1,12 @@
-﻿using MongoDB.Bson;
+﻿using achieve_lib.AD;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace achieve_lib.AD
+namespace achieve_lib.BL
 {
 	public class User
 	{
@@ -13,7 +14,11 @@ namespace achieve_lib.AD
 		[BsonRepresentation(BsonType.ObjectId)]
 		[JsonProperty("id")]
 		public string Id { get; set; }
-		
+
+		[BsonElement("identityID")]
+		[JsonProperty("identityID")]
+		public string IdentityId { get; set; }
+
 		[BsonElement("name")]
 		[JsonProperty("name")]
 		public string Name { get; set; }

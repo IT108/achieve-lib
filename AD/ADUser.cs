@@ -33,33 +33,21 @@ namespace achieve_lib.AD
 
 		}
 
-		[Required]
-		[JsonRequired]
 		[JsonProperty("username")]
 		public string Username { get; set; }
 
-		[Required]
-		[JsonRequired]
-		[JsonProperty("display_name")]
+		[JsonProperty("displayName")]
 		public string DisplayName { get; set; }
 
-		[Required]
-		[JsonRequired]
-		[JsonProperty("givenname")]
+		[JsonProperty("firstname")]
 		public string FirstName { get; set; }
 
-		[Required]
-		[JsonRequired]
 		[JsonProperty("surname")]
 		public string Surname { get; set; }
 
-		[Required]
-		[JsonRequired]
-		[JsonProperty("principal_name")]
+		[JsonProperty("principalName")]
 		public string PrincipalName { get; set; }
 
-		[Required]
-		[JsonRequired]
 		[JsonProperty("groups")]
 		public List<string> Groups { get; set; }
 
