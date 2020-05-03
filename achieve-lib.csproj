@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>achieve_lib</RootNamespace>
-    <Version>0.2.5</Version>
+    <Version>0.3.0</Version>
     <Authors>io12</Authors>
     <Product>achieve-master</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
