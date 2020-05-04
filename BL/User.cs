@@ -1,15 +1,29 @@
 ﻿using achieve_lib.AD;
+using achieve_lib.Requests;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace achieve_lib.BL
 {
 	public class User
 	{
+		public void UpdateUser(UpdateUserRequest request)
+		{
+			Grade = request.Grade ?? Grade;
+			GradeLiteral = request.GradeLiteral ?? GradeLiteral;
+			Room = request.Room ?? Room;
+			Email = request.Email ?? Email;
+			Name = request.Name ?? Name;
+			Surname = request.Surname ?? Surname;
+			Interests = request.Interests ?? Interests;
+			Description = request.Description ?? Description;
+		}
+
 		[BsonId]
 		[BsonRepresentation(BsonType.ObjectId)]
 		[JsonProperty("id")]
@@ -22,7 +36,7 @@ namespace achieve_lib.BL
 		[BsonElement("organizationID")]
 		[JsonProperty("organizationID")]
 		public string OrganizationId { get; set; }
-		
+
 		[BsonElement("grade")]
 		[JsonProperty("grade")]
 		public string Grade { get; set; } = "0";
@@ -63,8 +77,8 @@ namespace achieve_lib.BL
 		[JsonProperty("description")]
 		public string Description { get; set; } = "";
 
-		[BsonElement("activities")]
-		[JsonProperty("activities")]
+		[BsonElement("projects")]
+		[JsonProperty("projects")]
 		public List<string> Projects { get; set; } = new List<string>();
 	}
 }

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace achieve_lib.BL
 {
-	public class Activity
+	public class Project
 	{
 		[BsonId]
 		[BsonRepresentation(BsonType.ObjectId)]
@@ -27,9 +27,25 @@ namespace achieve_lib.BL
 		[JsonProperty("participants")]
 		public List<string> Participants { get; set; }
 
+		[BsonElement("profiles")]
+		[JsonProperty("profiles")]
+		public List<string> Profiles { get; set; }
 
-		[BsonElement("name")]
-		[JsonProperty("name")]
+
+		[BsonElement("curator")]
+		[JsonProperty("curator")]
 		public string Curator { get; set; }
+
+		[BsonElement("stages")]
+		[JsonProperty("stages")]
+		public List<Stage> Stages { get; set; }
+
+		[BsonElement("startDate")]
+		[JsonProperty("startDate")]
+		public DateTime StartDate { get; set; }
+
+		[BsonElement("endDate")]
+		[JsonProperty("endDate")]
+		public DateTime EndDate { get; set; }
 	}
 }
